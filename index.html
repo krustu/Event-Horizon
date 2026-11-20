@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Horizon — an event-driven space shooter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main id="game-col">
+        <canvas id="game" width="560" height="720"></canvas>
+        <p class="hint">WASD / arrows move &middot; Space fire &middot; P pause &middot; M mute &middot; Enter start</p>
+      </main>
+      <aside id="debug-panel"></aside>
+    </div>
+
+    <!-- Plain scripts (no modules / bundler) so the game also runs by double-clicking this file. -->
+    <!-- core: event registry, queue/bus, logger, base handler -->
+    <script src="src/core/Random.js"></script>
+    <script src="src/core/events.js"></script>
+    <script src="src/core/EventBus.js"></script>
+    <script src="src/core/EventLogger.js"></script>
+    <script src="src/core/EventHandler.js"></script>
+    <!-- game data -->
+    <script src="src/game/config.js"></script>
+    <script src="src/game/World.js"></script>
+    <!-- layer 1: event producers -->
+    <script src="src/producers/GameLoopProducer.js"></script>
+    <script src="src/producers/InputProducer.js"></script>
+    <script src="src/producers/EnemySpawner.js"></script>
+    <script src="src/producers/CollisionDetector.js"></script>
+    <!-- layer 3: event handlers -->
+    <script src="src/handlers/PlayerControlHandler.js"></script>
+    <script src="src/handlers/WeaponHandler.js"></script>
+    <script src="src/handlers/ProjectileHandler.js"></script>
+    <script src="src/handlers/EnemyBehaviorHandler.js"></script>
+    <script src="src/handlers/CombatHandler.js"></script>
+    <script src="src/handlers/PowerUpHandler.js"></script>
+    <script src="src/handlers/HealthAndStateHandler.js"></script>
+    <script src="src/handlers/WaveHandler.js"></script>
+    <script src="src/handlers/ScoreHandler.js"></script>
+    <script src="src/handlers/AchievementHandler.js"></script>
+    <script src="src/handlers/VisualEffectsHandler.js"></script>
+    <script src="src/handlers/AudioHandler.js"></script>
+    <script src="src/handlers/UINotificationHandler.js"></script>
+    <!-- composition root, view, debug UI, entry point -->
+    <script src="src/game/Game.js"></script>
+    <script src="src/game/Renderer.js"></script>
+    <script src="src/debug/DebugPanel.js"></script>
+    <script src="src/main.js"></script>
+  </body>
+</html>

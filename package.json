@@ -1,0 +1,14 @@
+{
+  "name": "event-horizon",
+  "version": "1.0.0",
+  "description": "Event Horizon - an event-driven 2D space shooter (HTML5 Canvas, vanilla JS) built around a central event queue.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/run.js",
+    "docs": "node tools/generate-events-md.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
